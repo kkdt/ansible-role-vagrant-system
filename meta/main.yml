@@ -4,7 +4,7 @@ dependencies: []
 galaxy_info:
   author: kkdt
   readme: README.md
-  description: Configures a server for Vagrant.
+  description: Configure a server for Vagrant.
   company: "N/A"
   license: "MIT"
   min_ansible_version: 2.9

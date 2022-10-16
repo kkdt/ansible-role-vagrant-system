@@ -1,6 +1,6 @@
 # Ansile Role: vagrant-system
 
-> Configures a system for Vagrant.
+> Configure a system for Vagrant.
 
 ## Requirements
 
