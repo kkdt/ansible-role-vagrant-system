@@ -31,19 +31,19 @@ vagrant_password: The quoted password
 ```yaml
 # Git/HTTPS
 - name: vagrant-system
-  src: git+https://github.com/kkdt/vagrant
+  src: git+https://github.com/kkdt/vagrant-system.git
   scm: git
   version: master
 
 # Git/SSH
 - name: vagrant-system
-  src: git+ssh://git@github.com/kkdt/vagrant
+  src: git+ssh://git@github.com:kkdt/vagrant-system.git
   scm: git
   version: master
 
 # Git/File
 - name: vagrant-system
-  src: git+file:///home/kkdt/vagrant
+  src: git+file:///home/vagrant/vagrant-system
   scm: git
   version: master
 
