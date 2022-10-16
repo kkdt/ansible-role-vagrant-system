@@ -40,5 +40,5 @@
     src: authorized_keys
     dest: /home/{{ vagrant_username }}/.ssh/authorized_keys
     owner: "{{ vagrant_username }}"
-    group: "{{ vagrant._roup }}"
+    group: "{{ vagrant_group }}"
     mode: 0600

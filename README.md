@@ -23,26 +23,36 @@ vagrant_password: The quoted password
 
 ## Dependencies
 
+Collections
+
 1. Ansible [community.general](https://galaxy.ansible.com/community/general)
 
-## Ansible Galaxy 'requirements.yml' Conifgurations
+## Ansible Galaxy 'requirements.yml' Configurations
+
 
 ```yaml
+# Git/HTTPS
 - name: kkdt.vagrant
   src: git+https://github.com/kkdt/vagrant
   scm: git
   version: master
-```
 
-```yaml
+# Git/SSH
 - name: kddt.vagrant
   src: git+ssh://git@github.com/kkdt/vagrant
   scm: git
   version: master
+
+# Git/File
+- name: kddt.vagrant
+  src: git+file:///home/kkdt/vagrant
+  scm: git
+  version: master
+
 ```
 
 ```shell
-ansible-galaxy role install --role-file requirements.yml --roles-path ~/.ansible/roles -vvv
+ansible-galaxy role install --role-file requirements.yml --roles-path ~/.ansible/roles --force -vvv
 ```
 
 ### Playbook
