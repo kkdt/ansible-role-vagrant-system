@@ -1,6 +1,6 @@
-# Ansile Role: vagrant
+# Ansile Role: vagrant-system
 
-> Configures a server for Vagrant.
+> Configures a system for Vagrant.
 
 ## Requirements
 
@@ -23,8 +23,6 @@ vagrant_password: The quoted password
 
 ## Dependencies
 
-Collections
-
 1. Ansible [community.general](https://galaxy.ansible.com/community/general)
 
 ## Ansible Galaxy 'requirements.yml' Configurations
@@ -32,19 +30,19 @@ Collections
 
 ```yaml
 # Git/HTTPS
-- name: kkdt.vagrant
+- name: vagrant-system
   src: git+https://github.com/kkdt/vagrant
   scm: git
   version: master
 
 # Git/SSH
-- name: kddt.vagrant
+- name: vagrant-system
   src: git+ssh://git@github.com/kkdt/vagrant
   scm: git
   version: master
 
 # Git/File
-- name: kddt.vagrant
+- name: vagrant-system
   src: git+file:///home/kkdt/vagrant
   scm: git
   version: master
@@ -60,10 +58,10 @@ ansible-galaxy role install --role-file requirements.yml --roles-path ~/.ansible
 ```yaml
 - hosts: localhosst
   connection: local
-  vars:
-    - vagrant_userame: vagrant
-    - vagrant_group: vagrant
-    - vagrant_password: "$1$9N3tAnJv$hPgSQo434gS8gZupEfAtx."
   roles:
-    - kkdt.vagrant
+    - role: vagrant-system
+      vars:
+        vagrant_userame: vagrant
+        vagrant_group: vagrant
+        vagrant_password: "$1$qgMxd1Lc$9ibeJNVeLNHgEiebUUftP."
 ```
