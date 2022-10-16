@@ -1,0 +1,27 @@
+---
+dependencies:
+  - community.general
+
+galaxy_info:
+  author: kkdt
+  description: Configures a server for Vagrant.
+  company: "N/A"
+  license: "license (BSD, MIT)"
+  min_ansible_version: 2.9
+  platforms:
+    - name: EL
+      versions:
+        - all
+    - name: Fedora
+      versions:
+        - all
+    - name: Debian
+      versions:
+        - all
+    - name: Ubuntu
+      versions:
+        - all
+  galaxy_tags:
+    - system
+    - development
+    - automation

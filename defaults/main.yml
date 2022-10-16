@@ -1,0 +1,4 @@
+---
+vagrant_username: vagrant
+vagrant_group: vagrant
+vagrant_password: "$1$9N3tAnJv$hPgSQo434gS8gZupEfAtx."
