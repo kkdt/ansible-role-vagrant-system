@@ -1,0 +1,9 @@
+---
+collections:
+  - name: community.general
+
+roles:
+  - name: vagrant-system
+    src: git+https://github.com/kkdt/ansible-role-vagrant-system.git
+    scm: git
+    version: master

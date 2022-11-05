@@ -8,12 +8,15 @@ None
 
 ## Role Variables
 
-The default Ansible variables are in [defaults](defaults/main.yml). To generate the password, execute the following command.
-The default passowrd is `vagrant` unless otherwise specified.
+The default Ansible variables are in [defaults](defaults/main.yml). The default password is `vagrant` unless otherwise specified.
 
-```shell
-openssl passwd -1 <password>
-```
+<details>
+ <summary>Generate password</summary>
+
+ ```shell
+ openssl passwd -1 <password>
+ ```
+</details>
 
 ```yaml
 vagrant_username: The 'vagrant' user
@@ -25,8 +28,7 @@ vagrant_password: The quoted password
 
 1. Ansible [community.general](https://galaxy.ansible.com/community/general)
 
-## Ansible Galaxy 'requirements.yml' Configurations
-
+## Ansible Galaxy
 
 ```yaml
 # Git/HTTPS
@@ -46,22 +48,15 @@ vagrant_password: The quoted password
   src: git+file:///home/vagrant/ansible-role-vagrant-system
   scm: git
   version: master
-
 ```
 
-```shell
-ansible-galaxy role install --role-file requirements.yml --roles-path ~/.ansible/roles --force -vvv
-```
+## Test
 
-### Playbook
-
-```yaml
-- hosts: localhosst
-  connection: local
-  roles:
-    - role: vagrant-system
-      vars:
-        vagrant_userame: vagrant
-        vagrant_group: vagrant
-        vagrant_password: "$1$qgMxd1Lc$9ibeJNVeLNHgEiebUUftP."
-```
+1. Install requirements
+    ```shell
+    ansible-galaxy install -r tests/requirements.yml --force
+    ```
+1. Execute test playbook
+    ```shell
+    ansible-playbook tests/test.yml
+    ```

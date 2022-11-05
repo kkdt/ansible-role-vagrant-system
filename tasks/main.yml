@@ -42,3 +42,10 @@
     owner: "{{ vagrant_username }}"
     group: "{{ vagrant_group }}"
     mode: 0600
+
+- name: Install vagrantrc.sh
+  become: true
+  ansible.builtin.template:
+    src: "{{ ansible_os_family }}.sh.j2"
+    dest: /etc/profile.d/vagrantrc.sh
+    mode: 0644

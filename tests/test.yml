@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  connection: local
+  roles:
+    - role: vagrant-system
+      vars:
+        vagrant_userame: vagrant
+        vagrant_group: vagrant
+        vagrant_password: "$1$qgMxd1Lc$9ibeJNVeLNHgEiebUUftP."
