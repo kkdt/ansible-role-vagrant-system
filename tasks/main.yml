@@ -46,6 +46,6 @@
 - name: Install vagrantrc.sh
   become: true
   ansible.builtin.template:
-    src: "{{ ansible_os_family }}.sh.j2"
+    src: "{{ ansible_facts['distribution'] | lower }}.sh.j2"
     dest: /etc/profile.d/vagrantrc.sh
     mode: 0644

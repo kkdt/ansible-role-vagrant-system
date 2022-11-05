@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -f "{{ vagrant_id_file }}" ]; then
+  __vagrantid=$(head -1 {{ vagrant_id_file }})
+  if [ ! -z "${__vagrantid}" ]; then
+    export PS1="[\u@\h \W]<\[\e[1;31;43m\] ${__vagrantid} \[\e[m\]>\$ "
+  fi
+fi
